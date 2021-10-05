@@ -9,7 +9,7 @@ app.use(
     credentials: true,
   })
 );
-
+const port = process.env.PORT || 3000;
 const dotenv = require("dotenv");
 dotenv.config();
 const axios = require("axios");
@@ -72,6 +72,10 @@ app.get("/:coinId", async (req, res) => {
     }
 })
 
-app.listen(5000, () => {
+app.get("/favicon.ico", (req, res) => { 
+
+})
+
+app.listen(port, () => {
   console.log("server is up");
 });
